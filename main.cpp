@@ -16,10 +16,10 @@ bool findGPA(const vector<double>&, double);
 
 int main()
 {
-    // Comment #2: Declare an array to hold GPA values.
+    // Comment #2: Declare a vector to hold GPA values.
     vector<double> gpaList(MAX_GPA_COUNT);
 
-    // Comment #3: Read GPA values from the file into the array.
+    // Comment #3: Read GPA values from the file into the vector.
     readGPAsFromFile(gpaList);
 
     // Comment #4: Output the GPA values to the console.
@@ -50,18 +50,18 @@ int main()
     cout << "Is " << gpaToFind << " in the GPA list? " 
          << (findGPA(gpaList, gpaToFind) ? "Yes" : "No") << endl;
 
-    cout << endl << "STD::Array data: " << gpaList.data() << endl;
+    cout << endl << "STD::Vector data: " << gpaList.data() << endl;
 
     return 0;
 }
 
-// Comment #6: Function to read GPA values from a file into the gpaList array.
+// Comment #6: Function to read GPA values from a file into the gpaList vector.
 void readGPAsFromFile(vector<double>& gpaList)
 {
     // Comment #7: Open the input file.
     ifstream inputFile("gpas.txt");
     
-    // Comment #8: Read GPA values from the file into the array.
+    // Comment #8: Read GPA values from the file into the vector.
     for (int i = 0; i < gpaList.size(); ++i)
     {
         inputFile >> gpaList[i];
