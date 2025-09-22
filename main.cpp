@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <iomanip>
+#include <algorithm>
 using namespace std;
 
 // Comment #1: Define a constant for the maximum number of GPA entries.
@@ -16,7 +17,7 @@ bool findGPA(const vector<double>&, double);
 int main()
 {
     // Comment #2: Declare an array to hold GPA values.
-    vector<double> gpaList;
+    vector<double> gpaList(MAX_GPA_COUNT);
 
     // Comment #3: Read GPA values from the file into the array.
     readGPAsFromFile(gpaList);
@@ -27,7 +28,7 @@ int main()
     // Comment #5: Check if the GPA list is empty and output the result.
     cout << endl << "Is the GPA list empty? " << (gpaList.empty() ? "Yes" : "No") << endl;
 
-    cout << "Front: " << gpaList.front() << endl;
+    cout << endl << "Front: " << gpaList.front() << endl;
     cout << "Back: " << gpaList.back() << endl;
 
     cout << endl << "Sorting the GPA list in the descending order." << endl;
@@ -81,7 +82,7 @@ void outputGPAs(const vector<double>& gpaList)
 
 void swapGPAs()
 {
-    /* vector<double> gpaList1 = {3.5, 3.7, 3.9, 4.1};
+    vector<double> gpaList1 = {3.5, 3.7, 3.9, 4.1};
     vector<double> gpaList2 = {2.5, 2.7, 2.9, 3.1};
 
     cout << "Before swap:" << endl;
@@ -97,7 +98,7 @@ void swapGPAs()
     for (int i = 0; i < gpaList1.size(); ++i) cout << gpaList1[i] << " ";
     cout << endl;
     for (int i = 0; i < gpaList2.size(); ++i) cout << gpaList2[i] << " ";
-    cout << endl; */
+    cout << endl;
 }
 
 void fillGPAs()
